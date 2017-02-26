@@ -29,12 +29,13 @@ export class ContactService {
 
   constructor() { }
 
-  getContacts(): Contact[]{
-    return this.contacts
+  getContacts(): Promise<Contact[]>{
+    return Promise.resolve(this.contacts)
   }
 
-  getContact(id: Number): Contact {
-    return this.getContacts().find(contact => contact.id == id);
+  getContact(id: Number): Promise<Contact> {
+    // return this.getContacts().find(contact => contact.id == id);
+    return this.getContacts().then(contacts => contacts.find(contact => contact.id == id))
   }
 
 }
