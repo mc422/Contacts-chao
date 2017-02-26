@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "contacts-chao",
+    "prod": "contacts-chao"
+  }
+}
